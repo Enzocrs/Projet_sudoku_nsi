@@ -28,7 +28,7 @@ label_creators = Label(frame_welcome, text = "By Enzo CROSES and Hugo LEROUX", f
                        fg = "white")
 label_creators.pack()
 
-welcome_button = Button(frame_welcome, text = "Commencez à jouer !", font = ("Arial", 15), bg ="#2E3440", fg = "white", activebackground ="#2E3440")
+welcome_button = Button(frame_welcome, text = "Commencez à jouer !", font = ("Arial", 15), bg ="#2E3440", fg = "white", activebackground ="#2E3440" )
 welcome_button.pack(pady = 20, fill = X)
 
 frame_welcome.pack(expand = TRUE)
