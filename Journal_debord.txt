@@ -1,3 +1,4 @@
 29/03/2021: On a créer le projet et commencé à répartir les taches dans différents fichiers en fonction du cahier des charges.
 30/03/2021: Reflexion sur Le plan d'attaque, debut de creation de l'interface graphique (pas encore d'interaction avec la logique)
 31/03/2021: Fin de la première version de la page d'accueil, on vera demain ce qu'il faut faire ensuite.
+03/05/2021: Création page choix niveaux
