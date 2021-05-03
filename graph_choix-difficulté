@@ -1,0 +1,43 @@
+from tkinter import *
+
+window = Tk()
+frame_welcome = Frame(window)
+# =========================================== Caractéristiques de la fenêtre ==========================================
+window.title("Su-Do-Ku !")
+window.geometry("1080x720")
+window.minsize(850, 500)
+window.state("zoomed")
+window.config(background = "#2E3440")
+
+# ================================================= Ecran de choix du niveaux =========================================
+
+"""zone test lien choix et validation"""
+def write_level():
+	
+	if nombre.get() == 1:
+		level_choice = Label(input_frame, text="Vous avez choisi 1")
+	elif nombre.get() == 2:
+		level_choice = Label(input_frame, text="Vous avez choisi 2")
+	elif nombre.get() == 3:
+		level_choice = Label(input_frame, text="Vous avez choisi 3")
+	level_choice.pack()
+input_frame = LabelFrame(window, text="zone test", width=350, height=100)
+input_frame.pack(padx=10, pady=10)
+
+
+"""boutons différents"""
+nombre = IntVar()
+nombre.set(1)
+level_1 = Radiobutton(frame_welcome, text="level_1", variable=nombre, value=1)
+level_2 = Radiobutton(frame_welcome, text="level_2", variable=nombre, value=2)
+level_3 = Radiobutton(frame_welcome, text="level_3", variable=nombre, value=3)
+select_Button = Button(frame_welcome, text="démarrer le niveau", command=write_level)
+
+
+level_1.grid(row=0, column=0, padx=10, pady=10)
+level_2.grid(row=0, column=1, padx=10, pady=10)
+level_3.grid(row=0, column=2, padx=10, pady=10)
+select_Button.grid(row=1, column=1, padx=10, pady=10)
+
+frame_welcome.pack(expand = TRUE)
+window.mainloop()
