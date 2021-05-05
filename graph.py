@@ -28,6 +28,7 @@ def show_frame(frame):
 frame_welcome = Frame(window)
 frame_personne = Frame(window, bg = "green")
 frame_choice_level = Frame(window, bg = "red")
+frame_jeu = Frame(window, bg="blue")
 
 for frame in (frame_welcome,frame_personne,frame_choice_level):
 	frame.grid(row = 0,column = 0, sticky = 'nsew')
@@ -66,33 +67,27 @@ bttn_connect.pack(pady = 10)
 
 # ============= frame choix niveaux =============
 
-"""zone test lien choix et validation"""
-def write_level():
-	
-	if nombre.get() == 1:
-		level_choice = Label(input_frame, text="Vous avez choisi 1")
-	elif nombre.get() == 2:
-		level_choice = Label(input_frame, text="Vous avez choisi 2")
-	elif nombre.get() == 3:
-		level_choice = Label(input_frame, text="Vous avez choisi 3")
-	level_choice.pack()
-input_frame = LabelFrame(frame_choice_level, text="zone test", width=350, height=100)
-input_frame.pack(padx=10, pady=10)
-
-
 """boutons différents"""
 nombre = IntVar()
 nombre.set(1)
 level_1 = Radiobutton(frame_choice_level, text="level_1", variable=nombre, value=1)
 level_2 = Radiobutton(frame_choice_level, text="level_2", variable=nombre, value=2)
 level_3 = Radiobutton(frame_choice_level, text="level_3", variable=nombre, value=3)
-select_Button = Button(frame_choice_level, text="démarrer le niveau", command=write_level)
+select_Button = Button(frame_choice_level, text="démarrer le niveau", lambda:show_frame(frame_game))
 
 
 level_1.pack()
 level_2.pack()
 level_3.pack()
 select_Button.pack()
+
+# ============= frame jeu =============
+
+
+
+
+
+
 
 
 

@@ -18,7 +18,7 @@ Les auteurs de ce projet sont:
     * Enzo Croses    TGEN 2
     * Hugo Leroux    TGEN 2
 
-Version du 30/03/2021
+Version du 05/05/2021
 """
 
 if __name__ == "__main__":
