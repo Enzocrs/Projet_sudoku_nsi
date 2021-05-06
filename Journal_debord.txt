@@ -3,3 +3,4 @@
 31/03/2021: Fin de la première version de la page d'accueil, on vera demain ce qu'il faut faire ensuite.
 03/05/2021: Création page choix niveaux et personne
 04/05/2021: Mise en place passage écran à un autre
+04/05/2021: Correction base grille 
