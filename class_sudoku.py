@@ -7,9 +7,9 @@ class Sudoku:
     """
     pk init on peut le faire en même temps que create / si on init create est fauyx c plus modifier
     """
-
-    def __init__(self, grid=[]):
-        self.grid = grid
+    #modification du init
+    def __init__(self):
+        self.grid = []
 
     def create_grid(self):
         """
