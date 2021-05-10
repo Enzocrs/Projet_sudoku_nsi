@@ -1,3 +1,8 @@
+"""
+Programme lié à la base de données (sqlite3)
+Version du 10 Mai 2021
+Enzo CROSES
+"""
 import sqlite3
 
 # Connexion à la base de données et association du curseur à la variable "c"

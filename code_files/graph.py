@@ -1,7 +1,8 @@
 """
 PARTIE GRAPHIQUE DE L'APPLICATION
 Entièrement faîte à l'aide de Tkinter
-Version du 04 Mai 2021
+Version du 10 Mai 2021
+Hugo Leroux
 """
 from tkinter import *
 
@@ -15,7 +16,7 @@ window.geometry("1920x1080")
 window.minsize(850, 500)
 window.state("zoomed")
 window.config(background = "#2E3440")
-window.iconbitmap("iconsudok.ico")
+#window.iconbitmap("/img/iconsudok.ico")
 window.rowconfigure(0,weight=1)
 window.columnconfigure(0, weight=1)
 
@@ -30,7 +31,7 @@ frame_personne = Frame(window, bg = "green")
 frame_choice_level = Frame(window, bg = "red")
 frame_jeu = Frame(window, bg="blue")
 
-for frame in (frame_welcome,frame_personne,frame_choice_level):
+for frame in (frame_welcome,frame_personne,frame_choice_level,frame_jeu):
 	frame.grid(row = 0,column = 0, sticky = 'nsew')
 
 show_frame(frame_welcome)
@@ -73,7 +74,10 @@ nombre.set(1)
 level_1 = Radiobutton(frame_choice_level, text="level_1", variable=nombre, value=1)
 level_2 = Radiobutton(frame_choice_level, text="level_2", variable=nombre, value=2)
 level_3 = Radiobutton(frame_choice_level, text="level_3", variable=nombre, value=3)
-select_Button = Button(frame_choice_level, text="démarrer le niveau", command=lambda:show_frame(frame_game))
+"""
+à partir de la on ne peut plus switcher de frame, à corriger
+"""
+select_Button = Button(frame_choice_level, text="démarrer le niveau", command = lambda:show_frame(frame_game))
 
 
 level_1.pack()
@@ -82,15 +86,12 @@ level_3.pack()
 select_Button.pack()
 
 # ============= frame jeu =============
-
 label_disclaimer = Label(frame_jeu, text="En cours de création")
-retour = Button(frame_jeu, text="Retourner au menu précédent", command=lambda:show_frame(frame_choice_level))
+retour = Button(frame_jeu, text="Retourner au menu précédent", command = lambda:show_frame(frame_choice_level))
 
 
-
-
-
-
+label_disclaimer.pack()
+retour.pack()
 
 
 window.mainloop()
