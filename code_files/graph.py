@@ -73,7 +73,7 @@ nombre.set(1)
 level_1 = Radiobutton(frame_choice_level, text="level_1", variable=nombre, value=1)
 level_2 = Radiobutton(frame_choice_level, text="level_2", variable=nombre, value=2)
 level_3 = Radiobutton(frame_choice_level, text="level_3", variable=nombre, value=3)
-select_Button = Button(frame_choice_level, text="démarrer le niveau", lambda:show_frame(frame_game))
+select_Button = Button(frame_choice_level, text="démarrer le niveau", command=lambda:show_frame(frame_game))
 
 
 level_1.pack()
@@ -83,6 +83,8 @@ select_Button.pack()
 
 # ============= frame jeu =============
 
+label_disclaimer = Label(frame_jeu, text="En cours de création")
+retour = Button(frame_jeu, text="Retourner au menu précédent", command=lambda:show_frame(frame_choice_level))
 
 
 
