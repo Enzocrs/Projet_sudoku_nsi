@@ -1,6 +1,6 @@
 """
 Programme lié à la base de données (sqlite3)
-Version du 11 Mai 2021
+Version du 12 Mai 2021
 Responsable: Enzo CROSES
 """
 import sqlite3
@@ -39,8 +39,9 @@ CREATE TABLE IF NOT EXISTS Joueurs(
 )
 """)
 
+# ================================================== Ajouter grille ===================================================
 
-# Modifier les valeurs pour insérer une nouvelle grille
+# Modifier les valeurs pour insérer une nouvelle grille, ne jamais modifier les clefs
 dico_grille = {
     "ligne_1" : "765921483",
     "ligne_2" : "983574612",
@@ -60,6 +61,22 @@ def inserer_nouvelle_grille(dico_grille):
         , dico_grille
 		)
 
+# Remettre en commentaire après éxecution
 # inserer_nouvelle_grille(dico_grille)
+
+# ================================================== Ajouter joueur ===================================================
+
+dico_joueur = {
+    "pseudo" : "",# Pseudo entré par l'utilisateur dans le graph frame inscription
+    "password" : ""# Mot de passe entré par l'utilisateur dans le graph frame inscription
+}
+
+def inserer_nouveau_joueur(dico_joueur):
+    c.execute("""
+    INSERT INTO Joueurs (pseudo, password)
+    VALUES (:pseudo, :password)"""
+    , dico_joueur
+    )
+
 conn.commit()
 c.close()

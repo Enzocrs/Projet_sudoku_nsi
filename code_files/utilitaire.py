@@ -1,5 +1,6 @@
 """
 Ce programme contient uniquement des fonctions pour permettre d'accelerer les taches longues de la programmation
+Responsable: Enzo CROSES et Hugo LEROUX
 """
 
 
