@@ -15,7 +15,7 @@ window.geometry("1920x1080")
 window.minsize(850, 500)
 window.state("zoomed")
 window.config(background = "#2E3440")
-#window.iconbitmap("/img/iconsudok.ico")
+window.iconbitmap("/img/iconsudok.ico")
 window.rowconfigure(0,weight=1)
 window.columnconfigure(0, weight=1)
 
