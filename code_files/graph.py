@@ -30,8 +30,9 @@ frame_welcome = Frame(window)
 frame_personne = Frame(window, bg = "green")
 frame_choice_level = Frame(window, bg = "red")
 frame_jeu = Frame(window, bg="blue")
+frame_create_account = Frame(window, bg="pink")
 
-for frame in (frame_welcome,frame_personne,frame_choice_level,frame_jeu):
+for frame in (frame_welcome,frame_personne,frame_choice_level,frame_jeu,frame_create_account):
 	frame.grid(row = 0,column = 0, sticky = 'nsew')
 
 show_frame(frame_welcome)
@@ -60,11 +61,31 @@ label_welcome.pack()
 
 bttn_invit = Button(frame_personne, text="invité",command = lambda:show_frame(frame_choice_level))
 bttn_new = Button(frame_personne, text="créer compte")
-bttn_connect = Button(frame_personne, text="connexion")
+bttn_connect = Button(frame_personne, text="connexion",command = lambda:show_frame(frame_jeu))
 
 bttn_invit.pack(pady = 10)
 bttn_new.pack(pady = 10)
 bttn_connect.pack(pady = 10)
+ 	
+# ============= créer compte ==================
+
+label_create_account = Label (frame_create_account, text = "Entrer vos informations pour créer votre compte")
+label_create_account.pack()
+
+label_pseudo = Label(frame_create_account, text= "Entrer un pseudo :")
+label_pseudo.pack()
+
+pseudo = Entry(frame_create_account, textvariable=StringVar() )
+pseudo.pack()
+
+label_password = Label(frame_create_account, text ="Entrer un mot de passe :")
+label_password.pack()
+
+password = Entry(frame_create_account, textvariable = StringVar(),show = "*")
+password.pack()
+
+Button_register = Button(frame_create_account, text = "Enregitrer", command = lambda:show_frame(frame_personne))
+Button_register.pack()
 
 # ============= frame choix niveaux =============
 
@@ -77,7 +98,7 @@ level_3 = Radiobutton(frame_choice_level, text="level_3", variable=nombre, value
 """
 à partir de la on ne peut plus switcher de frame, à corriger
 """
-select_Button = Button(frame_choice_level, text="démarrer le niveau", command = lambda:show_frame(frame_game))
+select_Button = Button(frame_choice_level, text="démarrer le niveau", command = lambda:show_frame(frame_jeu))
 
 
 level_1.pack()
