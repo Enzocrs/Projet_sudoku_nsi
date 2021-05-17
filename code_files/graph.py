@@ -6,7 +6,6 @@ Hugo Leroux
 """
 from tkinter import *
 
-
 window = Tk()
 
 # =========================================== Caractéristiques de la fenêtre ==========================================
