@@ -6,4 +6,5 @@
 04/05/2021: Correction base grille
 10/05/2021: Création structure base de données + debut d'une meilleure organisation du travail
 11/05/2021: Création du script pour insérer des grilles dans la BD
-12/05/2021 matin: Création du script pour insérer un joueur dans la BD
+12/05/2021: matin: Création du script pour insérer un joueur dans la BD
+17/05/2021: Creation page créer un compte et des pages "en cours de création"
