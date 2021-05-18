@@ -93,8 +93,14 @@ label_password.pack()
 password = Entry(frame_create_account, textvariable = new_password,show = "*")
 password.pack()
 
-Button_register = Button(frame_create_account, text = "Enregitrer", command = lambda:show_frame(frame_personne))
+Label_cut = Label(frame_create_account, text = "Attention l'enregistrement fermera le jeu !!")
+Label_cut.pack()
+
+Button_register = Button(frame_create_account, text = "Enregitrer", command = lambda: window.destroy)
 Button_register.pack()
+
+Button_retour_to_pers = Button(frame_create_account, text = "retour choix personne", command = lambda:show_frame(frame_personne))
+Button_retour_to_pers.pack()
 
 # ============= connexion ==================
 
@@ -125,8 +131,9 @@ level_1 = Radiobutton(frame_choice_level, text="level_1", variable=nombre, value
 level_2 = Radiobutton(frame_choice_level, text="level_2", variable=nombre, value=2)
 level_3 = Radiobutton(frame_choice_level, text="level_3", variable=nombre, value=3)
 """
-à partir de la on ne peut plus switcher de frame, à corriger
+faire afficher une frame différente selon bouton choisis
 """
+Button_retour_to_pers = Button(frame_choice_level, text = "retour choix personne", command = lambda:show_frame(frame_personne))
 select_Button = Button(frame_choice_level, text="démarrer le niveau", command = lambda:show_frame(frame_jeu))
 
 
@@ -134,6 +141,7 @@ level_1.pack()
 level_2.pack()
 level_3.pack()
 select_Button.pack()
+Button_retour_to_pers.pack()
 
 # ============= frame jeu =============
 label_disclaimer = Label(frame_jeu, text="En cours de création")
