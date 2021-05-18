@@ -1,12 +1,21 @@
 """
 PARTIE GRAPHIQUE DE L'APPLICATION
 Entièrement faîte à l'aide de Tkinter
-Version du 10 Mai 2021
-Hugo Leroux
+Version du 18 Mai 2021
+Responsable: Hugo Leroux
 """
 from tkinter import *
 
 window = Tk()
+
+# ========================================== Variables pour autres fichiers ===========================================
+# Variables pour inscription
+new_pseudo = StringVar()
+new_password = StringVar()
+
+# Variables pour login
+log_pseudo = StringVar()
+log_password = StringVar()
 
 # =========================================== Caractéristiques de la fenêtre ==========================================
 
@@ -15,7 +24,7 @@ window.geometry("1920x1080")
 window.minsize(850, 500)
 window.state("zoomed")
 window.config(background = "#2E3440")
-window.iconbitmap("/img/iconsudok.ico")
+#window.iconbitmap("/img/iconsudok.ico")
 window.rowconfigure(0,weight=1)
 window.columnconfigure(0, weight=1)
 
@@ -60,7 +69,7 @@ label_welcome = Label(frame_personne, text = "Veuillez sélectioner l'utilisateu
 label_welcome.pack()
 
 bttn_invit = Button(frame_personne, text="invité",command = lambda:show_frame(frame_choice_level))
-bttn_new = Button(frame_personne, text="créer compte")
+bttn_new = Button(frame_personne, text="créer compte",command = lambda:show_frame(frame_create_account))
 bttn_connect = Button(frame_personne, text="connexion",command = lambda:show_frame(frame_connection))
 
 bttn_invit.pack(pady = 10)
@@ -75,13 +84,13 @@ label_create_account.pack()
 label_pseudo = Label(frame_create_account, text= "Entrer un pseudo :")
 label_pseudo.pack()
 
-pseudo = Entry(frame_create_account, textvariable=StringVar() )
+pseudo = Entry(frame_create_account, textvariable=new_pseudo)
 pseudo.pack()
 
 label_password = Label(frame_create_account, text ="Entrer un mot de passe :")
 label_password.pack()
 
-password = Entry(frame_create_account, textvariable = StringVar(),show = "*")
+password = Entry(frame_create_account, textvariable = new_password,show = "*")
 password.pack()
 
 Button_register = Button(frame_create_account, text = "Enregitrer", command = lambda:show_frame(frame_personne))
@@ -95,13 +104,13 @@ label_connection.pack()
 label_pseudo = Label(frame_connection, text= "Entrer un pseudo :")
 label_pseudo.pack()
 
-pseudo_test = Entry(frame_connection, textvariable=StringVar())
+pseudo_test = Entry(frame_connection, textvariable=log_pseudo)
 pseudo_test.pack()
 
 label_password = Label(frame_connection, text ="Entrer un mot de passe :")
 label_password.pack()
 
-password_test = Entry(frame_connection, textvariable = StringVar(),show = "*")
+password_test = Entry(frame_connection, textvariable = log_password,show = "*")
 password_test.pack()
 
 Button_connection = Button(frame_connection, text = "connexion", command = lambda:show_frame(frame_choice_level))

@@ -5,6 +5,8 @@ Responsable: Enzo CROSES
 """
 import sqlite3
 
+import graph as ui
+
 
 # Connexion à la base de données et association du curseur à la variable "c"
 conn = sqlite3.Connection("database.db")
@@ -66,9 +68,10 @@ def inserer_nouvelle_grille(dico_grille):
 
 # ================================================== Ajouter joueur ===================================================
 
+# NE RIEN MODIFIER
 dico_joueur = {
-    "pseudo" : "",# Pseudo entré par l'utilisateur dans le graph frame inscription
-    "password" : ""# Mot de passe entré par l'utilisateur dans le graph frame inscription
+    "pseudo" : ui.new_pseudo.get(),
+    "password" : ui.new_password.get()
 }
 
 def inserer_nouveau_joueur(dico_joueur):
@@ -77,6 +80,10 @@ def inserer_nouveau_joueur(dico_joueur):
     VALUES (:pseudo, :password)"""
     , dico_joueur
     )
+# inserer_nouveau_joueur(dico_joueur)
+
+# ============================================ Connexion de l'utilisateur =============================================
+
 
 conn.commit()
 c.close()
