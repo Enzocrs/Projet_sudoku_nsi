@@ -66,6 +66,18 @@ def inserer_nouvelle_grille(dico_grille):
 # Remettre en commentaire après éxecution
 # inserer_nouvelle_grille(dico_grille)
 
+# ======================================== Vérification de l'unicité du pseudo ========================================
+#A FINIR CAR BUGGER
+def est_unique(pseudo):
+	"""
+    Cette fonction permet de bloquer l'ajout d'un nouvel utilisateur dans la base de données si son pseudo est
+    identique à un pseudo déjà présent dans la base de données, afin d'éviter tout conflit
+    """
+	c.execute("SELECT pseudo FROM joueurs",pseudo)
+	meme_pseudo = c.fetchall()
+	return not meme_pseudo
+
+
 # ================================================== Ajouter joueur ===================================================
 
 # NE RIEN MODIFIER
@@ -75,12 +87,13 @@ dico_joueur = {
 }
 
 def inserer_nouveau_joueur(dico_joueur):
-    c.execute("""
-    INSERT INTO Joueurs (pseudo, password)
-    VALUES (:pseudo, :password)"""
-    , dico_joueur
-    )
-# inserer_nouveau_joueur(dico_joueur)
+    if est_unique(dico_joueur["pseudo"]):
+        c.execute("""
+        INSERT INTO Joueurs (pseudo, password)
+        VALUES (:pseudo, :password)"""
+        , dico_joueur
+        )
+inserer_nouveau_joueur(dico_joueur)
 
 # ============================================ Connexion de l'utilisateur =============================================
 

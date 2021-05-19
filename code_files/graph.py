@@ -96,7 +96,7 @@ password.pack()
 Label_cut = Label(frame_create_account, text = "Attention l'enregistrement fermera le jeu !!")
 Label_cut.pack()
 
-Button_register = Button(frame_create_account, text = "Enregitrer", command = lambda: window.destroy)
+Button_register = Button(frame_create_account, text = "Enregitrer", command = lambda: window.destroy())
 Button_register.pack()
 
 Button_retour_to_pers = Button(frame_create_account, text = "retour choix personne", command = lambda:show_frame(frame_personne))
