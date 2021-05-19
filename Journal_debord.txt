@@ -9,3 +9,4 @@
 12/05/2021: matin: Création du script pour insérer un joueur dans la BD
 17/05/2021: Creation page créer un compte, connexion et une page "en cours de création"
 18/05/2021: Creation de la fonction pour ajouter des joueurs (fonctionnelle et reliée a l'UI)
+19/05/2021: Mise en place d'une vérification pour éviter d'avoir 2 pseudos identiques dans la base de données
