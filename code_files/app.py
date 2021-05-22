@@ -96,6 +96,21 @@ def inserer_nouveau_joueur(dico_joueur):
 
 # ============================================ Connexion de l'utilisateur =============================================
 
+dico_login = {
+    "pseudo" : ui.log_pseudo.get(),
+    "password" : ui.log_password.get()
+}
+
+
+def autoriser_connexion():
+	"""
+    Retourne un Booléen pour autoriser au non la connexion d'un utilisateur en fonction de la validité des informations
+    entrées dans le formumaire de connexion
+    """
+	c.execute("SELECT * FROM joueurs WHERE pseudo=:pseudo AND password=:password", dico_login)
+	connexion = c.fetchone()
+	return bool(connexion)
+
 
 conn.commit()
 c.close()
