@@ -66,7 +66,7 @@ def inserer_nouvelle_grille(dico_grille):
 		)
 
 # REMETTRE EN COMMENTAIRE APRES EXECUTION
-# inserer_nouvelle_grille(dico_grille)
+#inserer_nouvelle_grille(dico_grille)
 
 # ======================================== Vérification de l'unicité du pseudo ========================================
 def est_unique():
@@ -111,18 +111,24 @@ def autoriser_connexion():
     """
 	c.execute("SELECT * FROM joueurs WHERE pseudo=:pseudo AND password=:password", dico_login)
 	connexion = c.fetchone()
-	print(connexion)
 	return bool(connexion)
 
-if autoriser_connexion():
-	print("reussi")
-else:
-	print("raté")
-
-
-
-
 def recuperer_grille():
+	"""
+	Permet de tirer une grille au hasard dans la base de données, renvoie un tuple avec 9 strings dedans
+	"""
+	# On regarde combien de grilles sont présentes dans la base de données
+	c.execute("""
+		SELECT * FROM Grilles"""
+		)
+	nb_de_grilles = len(c.fetchall())
+
+	c.execute("""
+		SELECT ligne_1, ligne_2, ligne_3, ligne_4, ligne_5, ligne_6, ligne_7, ligne_8, ligne_9 FROM Grilles WHERE Id_ligne = ?""",
+		(randint(1, nb_de_grilles), ))
+	grille_tiree = c.fetchone()
+
+	return grille_tiree
 
 conn.commit()
 c.close()

@@ -7,11 +7,11 @@ from random import shuffle
 
 import app
 
-def rendre_jouable(grille):
+def rendre_jouable():
     """
     Transforme une grille pleine en grille jouable, retourne une liste qui en contient 9
     dans ces 9 listes il y a les chiffres invisibles, soit ceux que le joueur doit trouver
     """
+    grille = app.recuperer_grille()
     
-
     
