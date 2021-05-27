@@ -7,6 +7,8 @@ import sqlite3
 
 import graph as ui
 
+from random import randint
+
 
 # Connexion à la base de données et association du curseur à la variable "c"
 conn = sqlite3.Connection("database.db")
@@ -109,8 +111,18 @@ def autoriser_connexion():
     """
 	c.execute("SELECT * FROM joueurs WHERE pseudo=:pseudo AND password=:password", dico_login)
 	connexion = c.fetchone()
+	print(connexion)
 	return bool(connexion)
 
+if autoriser_connexion():
+	print("reussi")
+else:
+	print("raté")
+
+
+
+
+def recuperer_grille():
 
 conn.commit()
 c.close()

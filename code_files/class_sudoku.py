@@ -1,22 +1,17 @@
+"""
+Ce programme contient toute les fonctions liées au jeu en lui même
+Version du 27/05/2021
+Responsable: Enzo CROSES
+"""
 from random import shuffle
-class Sudoku:
+
+import app
+
+def rendre_jouable(grille):
     """
-    Créer la classe principale qui permettra de creer et d'intéragir avec un jeu
+    Transforme une grille pleine en grille jouable, retourne une liste qui en contient 9
+    dans ces 9 listes il y a les chiffres invisibles, soit ceux que le joueur doit trouver
     """
     
-    """
-    pk init on peut le faire en même temps que create / si on init create est fauyx c plus modifier
-    """
-    #modification du init
-    def __init__(self):
-        self.grid = []
 
-    def create_grid(self):
-        """
-        On créer une grille que l'on mélange
-        """
-        # En partant de ce modèle, les lignes sont forcément jouables (pas de chiffres identiques)
-        
-
-# =================================================== Zone de test ====================================================
     
